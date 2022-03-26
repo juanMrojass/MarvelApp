@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.manuelmarvelapp.ui.main.view.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailHeroeFragment"
+            app:destination="@id/detailHeroeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailHeroeFragment"
+        android:name="com.manuelmarvelapp.ui.main.view.detail_heroe.DetailHeroeFragment"
+        android:label="DetailHeroeFragment"
+        tools:layout="@layout/fragment_detail_heroe">
+
+        <argument
+            android:name="resultItem"
+            app:argType="com.manuelmarvelapp.data.model.marvel.character_response.ResultsItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+
+</navigation>
